@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from tarefas.tarefas import tarefas_blueprint
+from usuarios.usuarios import usuarios_blueprint
 from database import db
 
 
@@ -10,6 +11,6 @@ conexao = 'mysql+pymysql://root:@localhost/to-do-list'
 app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 
 app.register_blueprint(tarefas_blueprint)
-
+app.register_blueprint(usuarios_blueprint)
 db.init_app(app)
 

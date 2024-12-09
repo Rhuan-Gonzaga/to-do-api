@@ -15,7 +15,7 @@ def criar_tarefa():
   return jsonify({"mensagem":"Tarefa cadastrada"}), 201
 
 #Editando o status de uma tarefa
-@tarefas_blueprint.route('/status/<int:id>',methods=['POST'])
+@tarefas_blueprint.route('/status/<int: id>',methods=['POST'])
 def mudar_status(id):
   data = request.json
 
